@@ -1,0 +1,22 @@
+micronaut:
+  application:
+    name: kalah
+  views:
+    thymeleaf:
+      cache-ttlms: 0
+      check-existence: false
+      force-template-mode: true
+      cacheable: false
+  router:
+    static-resources:
+      webjars:
+        enabled: true
+        paths: classpath:META-INF/resources/webjars
+        mapping: /webjars/**
+      public:
+        enabled: true
+        paths: classpath:public
+        mapping: /public/**
+kalah:
+  numberOfPitsPerPlayer: 6
+  numberOfStonesPerPit: 6

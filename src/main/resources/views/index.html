@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+
+    <title>Kalah</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/webjars/bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/webjars/font-awesome/5.8.2/css/all.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<div class="container">
+    <h3></h3>
+    <div class="row">
+
+        <div class="col-xs-3">
+            <h3 th:text="@{'Current player is ' + ${snapshot.currentPlayer}}"></h3>
+        </div>
+        <div class="col-xs-6">
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <th scope="row">Player 2<i class="fas fa-arrow-left"></i></th>
+                    <td class="h3" th:text="${snapshot.pits[13]}"></td>
+                    <td><a th:href="@{'/game/'+${snapshot.gameId}+'/play/12'}" th:if="${snapshot.currentPlayer == 2}"
+                           th:text="${snapshot.pits[12]}"></a>
+                        <span th:if="${snapshot.currentPlayer == 1}" th:text="${snapshot.pits[12]}"></span>
+                    </td>
+                    <td><a th:href="@{'/game/'+${snapshot.gameId}+'/play/11'}" th:if="${snapshot.currentPlayer == 2}"
+                           th:text="${snapshot.pits[11]}"></a>
+                        <span th:if="${snapshot.currentPlayer == 1}" th:text="${snapshot.pits[11]}"></span>
+                    </td>
+                    <td><a th:href="@{'/game/'+${snapshot.gameId}+'/play/10'}" th:if="${snapshot.currentPlayer == 2}"
+                           th:text="${snapshot.pits[10]}"></a>
+                        <span th:if="${snapshot.currentPlayer == 1}" th:text="${snapshot.pits[10]}"></span>
+                    </td>
+                    <td><a th:href="@{'/game/'+${snapshot.gameId}+'/play/9'}" th:if="${snapshot.currentPlayer == 2}"
+                           th:text="${snapshot.pits[9]}"></a>
+                        <span th:if="${snapshot.currentPlayer == 1}" th:text="${snapshot.pits[9]}"></span>
+                    </td>
+                    <td><a th:href="@{'/game/'+${snapshot.gameId}+'/play/8'}" th:if="${snapshot.currentPlayer == 2}"
+                           th:text="${snapshot.pits[8]}"></a>
+                        <span th:if="${snapshot.currentPlayer == 1}" th:text="${snapshot.pits[8]}"></span>
+                    </td>
+                    <td><a th:href="@{'/game/'+${snapshot.gameId}+'/play/7'}" th:if="${snapshot.currentPlayer == 2}"
+                           th:text="${snapshot.pits[7]}"></a>
+                        <span th:if="${snapshot.currentPlayer == 1}" th:text="${snapshot.pits[7]}"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Player 1<i class="fas fa-arrow-right"></i></th>
+                    <td><a th:href="@{'/game/'+${snapshot.gameId}+'/play/0'}" th:if="${snapshot.currentPlayer == 1}"
+                           th:text="${snapshot.pits[0]}"></a>
+                        <span th:if="${snapshot.currentPlayer == 2}" th:text="${snapshot.pits[0]}"></span>
+                    </td>
+                    <td><a th:href="@{'/game/'+${snapshot.gameId}+'/play/1'}" th:if="${snapshot.currentPlayer == 1}"
+                           th:text="${snapshot.pits[1]}"></a>
+                        <span th:if="${snapshot.currentPlayer == 2}" th:text="${snapshot.pits[1]}"></span>
+                    </td>
+                    <td><a th:href="@{'/game/'+${snapshot.gameId}+'/play/2'}" th:if="${snapshot.currentPlayer == 1}"
+                           th:text="${snapshot.pits[2]}"></a>
+                        <span th:if="${snapshot.currentPlayer == 2}" th:text="${snapshot.pits[2]}"></span>
+                    </td>
+                    <td><a th:href="@{'/game/'+${snapshot.gameId}+'/play/3'}" th:if="${snapshot.currentPlayer == 1}"
+                           th:text="${snapshot.pits[3]}"></a>
+                        <span th:if="${snapshot.currentPlayer == 2}" th:text="${snapshot.pits[3]}"></span>
+                    </td>
+                    <td><a th:href="@{'/game/'+${snapshot.gameId}+'/play/4'}" th:if="${snapshot.currentPlayer == 1}"
+                           th:text="${snapshot.pits[4]}"></a>
+                        <span th:if="${snapshot.currentPlayer == 2}" th:text="${snapshot.pits[4]}"></span>
+                    </td>
+                    <td><a th:href="@{'/game/'+${snapshot.gameId}+'/play/5'}" th:if="${snapshot.currentPlayer == 1}"
+                           th:text="${snapshot.pits[5]}"></a>
+                        <span th:if="${snapshot.currentPlayer == 2}" th:text="${snapshot.pits[5]}"></span>
+                    </td>
+                    <td class="h3" th:text="${snapshot.pits[6]}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-xs-3">
+            <h1 th:if="${snapshot.ruleOutput.toString() == 'GAME_FINISHED'}"
+                th:text="@{'Game finished. Score of player 1 is '+${snapshot.scoreOfPlayer1}+', score of player 2 is '+${snapshot.scoreOfPlayer2}}"></h1>
+        </div>
+    </div>
+</div><!-- /.container -->
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.js"></script>
+</body>
+</html>
