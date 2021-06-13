@@ -6,21 +6,17 @@ import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.views.ModelAndView;
+import lombok.RequiredArgsConstructor;
 
 import javax.inject.Inject;
 import java.util.Map;
 
 @Controller(produces = MediaType.TEXT_HTML)
+@RequiredArgsConstructor(onConstructor = @__({@Inject}))
 public class ViewController {
 
     private final KalahService kalahService;
     private final KalahProperties kalahProperties;
-
-    @Inject
-    public ViewController(KalahService kalahService, KalahProperties kalahProperties) {
-        this.kalahService = kalahService;
-        this.kalahProperties = kalahProperties;
-    }
 
     @Get()
     public ModelAndView create() throws Exception {

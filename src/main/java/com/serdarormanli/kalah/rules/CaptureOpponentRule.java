@@ -21,9 +21,9 @@ public class CaptureOpponentRule extends BaseRule {
     @Override
     @Then
     public RuleState then() {
-        int otherPlayersPit = (game.getNumberOfPitsPerPlayer() * 2) - indexOfPit;
+        var otherPlayersPit = (game.getNumberOfPitsPerPlayer() * 2) - indexOfPit;
 
-        int amountOfCapturedStones = game.getPit(otherPlayersPit);
+        var amountOfCapturedStones = game.getPit(otherPlayersPit);
         game.setPit(otherPlayersPit, 0);
 
         game.setPit(playersBigPit(game.getCurrentPlayer()), game.getPit(playersBigPit(game.getCurrentPlayer())) + amountOfCapturedStones);

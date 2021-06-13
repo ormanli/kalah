@@ -1,5 +1,6 @@
 package com.serdarormanli.kalah.model;
 
 public enum MessageType {
-    PLAY, LATEST_SNAPSHOT
+    PLAY,
+    LATEST_SNAPSHOT
 }

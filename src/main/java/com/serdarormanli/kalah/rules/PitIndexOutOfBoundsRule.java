@@ -14,8 +14,8 @@ public class PitIndexOutOfBoundsRule extends BaseRule {
     @Override
     @When
     public boolean when() {
-        int indexOfPlayers1BigPit = game.getNumberOfPitsPerPlayer();
-        int indexOfPlayers2BigPit = game.getNumberOfPitsPerPlayer() + indexOfPlayers1BigPit + 1;
+        var indexOfPlayers1BigPit = game.getNumberOfPitsPerPlayer();
+        var indexOfPlayers2BigPit = game.getNumberOfPitsPerPlayer() + indexOfPlayers1BigPit + 1;
 
         return indexOfPit < 0 ||
                 indexOfPlayers1BigPit == indexOfPit ||

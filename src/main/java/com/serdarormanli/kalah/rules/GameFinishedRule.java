@@ -9,14 +9,14 @@ public abstract class GameFinishedRule extends BaseRule {
     @Override
     @When
     public boolean when() {
-        int remainingStonesOfPlayer1 = 0;
-        int remainingStonesOfPlayer2 = 0;
+        var remainingStonesOfPlayer1 = 0;
+        var remainingStonesOfPlayer2 = 0;
 
-        for (int i = startingIndex(1); i < endingIndex(1); i++) {
+        for (var i = startingIndex(1); i < endingIndex(1); i++) {
             remainingStonesOfPlayer1 += game.getPit(i);
         }
 
-        for (int i = startingIndex(2); i < endingIndex(2); i++) {
+        for (var i = startingIndex(2); i < endingIndex(2); i++) {
             remainingStonesOfPlayer2 += game.getPit(i);
         }
 

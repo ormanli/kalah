@@ -24,7 +24,7 @@ public class DistibuteRule extends BaseRule {
     @Override
     @Then
     public RuleState then() {
-        int numberOfStonesInPit = game.getPit(indexOfPit);
+        var numberOfStonesInPit = game.getPit(indexOfPit);
         game.setPit(indexOfPit, 0);
         indexOfPit++;
 

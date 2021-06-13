@@ -8,21 +8,17 @@ import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.PathVariable;
 import io.micronaut.http.annotation.Post;
 import io.micronaut.http.annotation.RequestAttribute;
+import lombok.RequiredArgsConstructor;
 
 import javax.inject.Inject;
 import java.util.Optional;
 
 @Controller("/kalah")
+@RequiredArgsConstructor(onConstructor = @__({@Inject}))
 public class KalahController {
 
     private final KalahService kalahService;
     private final KalahProperties kalahProperties;
-
-    @Inject
-    public KalahController(KalahService kalahService, KalahProperties kalahProperties) {
-        this.kalahService = kalahService;
-        this.kalahProperties = kalahProperties;
-    }
 
     @Post
     public RoundSnapshot createGame(@RequestAttribute("numberOfPitsPerPlayer") Optional<Integer> numberOfPitsPerPlayer,

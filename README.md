@@ -21,3 +21,5 @@ Used Technologies
 * Micronaut
 * Quasar
 * RuleBook
+
+⚠️ This application requires Java 11 for build and run. Newer Java versions are not supported. ⚠️
